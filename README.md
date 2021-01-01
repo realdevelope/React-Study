@@ -2,7 +2,7 @@
 #1월 프론트앤드 기초부터 바로잡기 프로젝트6/30
 
 ## 학습환경
-vsc - create react app
+vsc - create react app<br>
 http://localhost:3000 
 
 ## 학습내용
