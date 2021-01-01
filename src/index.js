@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App';  //App.js   -> ./를 붙임으로써 확장자 .js가 생략됨
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App />   {/*App컴포넌트 실행하는 코드*/}
   </React.StrictMode>,
   document.getElementById('root')
 );

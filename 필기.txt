@@ -1,0 +1,143 @@
+<01월 01일>  -생활코딩 React 입문
+
+1. 수업소개 
+    -사용자 정의 태그 사용법
+    -사용자 정의 태그 를 react에서는 Component 라고 부름
+     Component를 사용할시 1.가독성을 높임
+			 2.재사용성 높아짐
+                                       3.유지보수가 훨씬 편리해진다(폭팔적효과)
+    -Component를 중심으로 현대적인 웹 애플리케이션 웹UI를 만들것!!!
+
+2. 공부전략
+   -코딩(coding) - > 실행(run) -> 리플로이(reploy : 모든작업이 끝난후에 소비자에게 전달하는것)
+
+3.개발환경의 종류 
+  -공식문서에 익숙해질것!
+  -create react app 이라는 프로그램을 설치
+     ->create react app을 설치하기 위해서 npm이 필요 (npm : nodejs 라는 기술을 이용해서 만들어진 여러앱들을 명령어 환경으로 손쉽게 설치할 수 있도록 도와주는 도구)       
+     ->npm을 설치하기위해서 nodejs가 필요
+4. npm을 이용해서 create react app 설치
+   ->npm install -g	create react app	// g - 어디에서든 실행할 수 있게
+   ->npm과 npx의 차이
+      npm : 프로그램을 설치하는 프로그램(도구)
+      npx : 임시로 설치해서 딱 한번만 실행시키고 지우는 (공간을 낭비하지 않고, 최신버전을 사용할 수 있음)
+
+5. create react app 을 이용하여 개발환경 구축
+   1)작업을 실행할 디렉터리를 생성
+   2)디렉터리에서 vsc 실행
+   3)터미널에서 해당위치에 create-react-app .  을 입력 (필요한 개발환경들이 알아서 구축됨 - 좀 오래걸림)
+
+6. 샘플 웹앱 실행
+   1) npm run start 
+   2) 웹페이지 열림
+   3) ctrl + C 를 하여 종료
+
+7. JS 코딩하는 법
+   -디렉토리 구조파악
+     1)public : index.html 파일이 있는 곳
+        -> index.html파일을 보면 <body>안에 <div id ="root"></div> 가 있는걸 볼 수 있음 ( 컴포넌트)
+     2)src : 소스가 있는 곳 (대부분의 파일이 여기안에 있음)
+       ->index.js 파일이 엔트리파일(진입파일)
+             ->index.js 파일을 보면 ReactDom.render(<App/>, document. getElementById('root')); 를 볼 수 있음
+              -> App이 컴포넌트 -> 컴포넌트의 실제 구현은 import를 통해서 ./App.js 에서 됨
+	 ->function type 으로 되어있는데 생활코딩 수업을 위해 class type으로 변경
+              ->App.js 에서 화면에 띄울 내용들을 수정 한다. ("hello world")출력
+
+8. CSS 코딩하는법
+   -index.js 라는 파일에 import './index.css'; 가 있는걸 볼 수 있다
+   	->import App from './App';  //App.js   -> ./를 붙임으로써 확장자 .js가 생략됨
+   	->즉, css를 작성하려면 index.js 에서 작성	
+
+9. 배포하는법
+   -react-app : 개발의 편의성을 위해서 이것저것 추가되어있는 상태이기때문에 조금 무거움
+        ->개발환경을 실행시킬때는 npm run start
+        ->빌드할떄는 npm run build -> 하게되면 build라는 디렉터리가 추가되면서 용량이 싹 줄어듬(불필요한거 제외)
+        ->실제로 서비스할때는 build안에 있는 걸 쓰면 된다 -> 웹서버의 doucument root (웹서버가 문서를 찾는)최상위 디렉토리에다가 빌드안에 있는 파일을 위치시키면 실 서버 환경이 구축됨
+        ->npm으로 설치할 수 있는 간단한 웹서버 : npx serve -s build   // -s : serve라는 웹서버를 다운받아서 실행시킬때 빌드 디렉토리를 document root로 하겠다 는 뜻
+                -> http://localhost:5000 접속해서 개발자 모드의 network를 보면 용량이 2.2MB에서 448kb 로 줄어들은걸 확인 할 수있다.
+
+10. 리액트가 없다면
+   -리액트 없이 public 에 간단한 html파일 작성 (pure.html)
+    	->코드가 엄청 길떄 컴포넌트로 깔끔하고 보기좋게 해주는게 리액트 (look like 최소화??!)
+	
+11. 컴포넌트 만들기 1
+    -10 강의에서 작성한 pure.html 파일을 react component 로작성
+     	->class 만들떄 클래스명 첫글자는 대문자여야 한다
+             ->class 안의 함수는 Function 키워드가 붙지 않는다.
+             ->return( ) 안의 컴포넌트는 하나의 최상의 태그만 사용해야한다.
+             react는 유사 javascript 이나 javascript는 아니다. (콘솔창에 쳐보면 문법오류남)
+    	     ->따옴표나 역슬래시 등을 사용하지않고 태그들을 그대로 사용해서 페이스북에서 만든 JSX 라는것!!!
+                  ->JSX 를 작성하면 create-react-app이 javascript 코드로 컨버팅 해준다.
+
+12. 컴포넌트 만들기 2
+    - 11강의에 이어서 10강의에서 작성한 pure.html 파일을 react component로 작성
+	->header, nav, aritcle 전부 컴포넌트화 시키보면서 완벽히 이해
+
+13. props
+      -태그의 속성과 같이 <component props_name ="props_value"> 이렇게 쓰인다  
+     -ES6 class를 사용해서 컴포넌트 정의할것임
+     -jsx에 약속인 기호 { } 사용하여  -> {this.props.name} 이런식으로 작성한다.
+     -props를 사용하여 완벽하게 작동하는 사용자 정의 태그를 만들어봄
+
+14. React Developer Tools
+      공부할떄 중요한것
+     1) 알고자하는것의 특성을 누군가가 잘 작성한 설명서를 잘 읽는것 -> reactjs.org
+     2) 설명서가 너무 장황하거나 너무 빈약할시에 -> 과학자가되어 여러가지 추론을 가설을 세우고
+				               여러가지도구를 이용해서 확인하고 결론을 내리는것(스스로 알아내는것)
+        즉, 현재상태를 측정하고 분석하는것 -> (촉매 : 질문하고, 검색하는것  -> 위와같은것을 한다면 독립가능)
+     3) 현재상태를 알아내는 도구 : 크롬 웹 스토어 -> react developer tools -> 개발자도구 -> 컴포넌트별로 확인가능
+
+15. component 파일로 분리하기
+     1) components 라는 디렉터리를 생성
+     2) 각 components 별 js파일 생성후 App.js에 작성했던 컴포넌트를 각각 이동
+     3) 각 js파일에 옮긴후 가장 상단에 import React, { Component } from 'react';   를 작성
+     4) 그리고 가장하단에 외부에서 사용할 수 있게 허용하는 export default 클래스명; 을 작성
+     5) App.js에 작성했던 각 컴포넌트를 지우고 가장 상단에 import 클래스명 from "./파일위치" ;   작성후 컴파일
+
+16. State 소개
+     -state를 하기전에 props를 가지고 비교하면서 이해하면 좀더 효율적!
+     -props : 사용자가 컴포넌트를 사용하는 입장에서 중요한것 (외부 
+     -state : props의 값에 따라서 내부의 구현에 필요한 데이터들 (사용자는 알아서는 안되는, 알필요없는)
+     ->좋은 component가 되기위해선  props와 state 가 철저히 분리되어 있어야 한다
+
+17. state 사용
+    -App.js의 클래스 App 컴포넌트를 state로 초기화해봄
+    -어떤 컴포넌트가 실행될때 render()함수보다 먼저 실행되면서 초기화 시켜주고 싶은 코드는 
+       construcror(props){
+             super(props);    
+             [여기]
+           }    안에 넣는다
+      -컴포넌트의 props 작성시 자바스크립트로 작성해야하기에 { }로 감싸준다 "" 로 감싸줄시 문자로 인식하여 그대로 출력된다
+      
+18. KEY
+    -여러개의 프로퍼티(props)를 받아와야할때 리액트가 내부적으로 필요해서 요청하는 데이터 
+    -부모의 state를 이용해서 자식의 내부데이터를 바뀌게 해봄
+    
+19. 이벤트 state props 그리고 render 함수
+    -3자가 서로 상호적용하면서 애플리케이션을 역동적으로 만들기 떄문에 state, props 를 같이 생각해볼 필요가 있다.
+    -web에 링크를 걸어서 클릭했을시 본문이 welcome 메세지가 나오게 / li에도 링크를 걸어 클릭했을시 각 컨텐트가 나오게 해봄
+    -state에 대해서 알아야할 중요한 사실 
+          -> 리액트에서 state의 값이 바뀌면 state를 가지고 있는 컴포넌트의 render() 함수가 다시호출됨!!
+          -> render() 함수가 다시 호출됨에 따라서 그 render() 함수 하위에있는 각 컴포넌트들의 각 render() 함수들이 싹다 다시 호출된다 
+              즉, props나 state의 값이 바뀌면 해당되는 render() 함수가 호출되게 약속되어있다. ( 화면이 다시그려진다!!!!!)
+
+20. 이벤트 설치
+     -App.js의 <h1>에 props를 state로 변경후 onClick ={  function( ) alert("hi"); } 이벤트 구현
+     	->경고창을 끄면 페이지가 리로드 되는 문제가 발생
+	->그 문제를 해결하는 방법은 onClick ={  function( e ) alert("hi"); } 이처럼 함수안에 매개변수로 e 를 넣어주고
+               e.preventDefault(); 를 작성해주면 이벤트가 발생한 태그의 기본동작 방법을 막음으로서 리로드 되지 않고 그대로 있게됨!
+    -이벤트 설치시 this를 찾을 수 없어서 에러가 뜰때는 함수가 끝나는 직후에  .bind(this)를 사용한다
+
+21. 이벤트 bind 함수 이해하기
+     이해 못함.... 사용법만 숙지! 
+
+22. 이벤트 setState 함 수 이해하기
+     -state 값을 직접변경하면 안되고  this.setState({ mode : "welcome" }); 와 같이 함수형태로 변경 해야함
+     -state의 값이 바뀌면 항상 setState로 바꿔줘야한 다는것! 중요!!!!
+     -가장 먼저 실행되는 constructor의 경우는 직접 바꿔줘도 됨
+
+23.컴포넌트 이벤트 만들기 1/3
+    -
+
+24.컴포넌트 이벤트 만들기  2/3
+    -
