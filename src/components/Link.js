@@ -10,11 +10,12 @@ class Link extends Component { //서브젝트라는 클래스를 만들겠다.
             lists.push(
             <li key = {data[i].id}>
                 <a href={"/content/" + data[i].id} 
-                    onClink ={function(e){
+                    data-id={data[i].id}
+                    onClick ={function(e){
                         e.preventDefault();
-                        this.props.onChangePage();
+                        this.props.onChangePage(e.target.dataset.id);
                     }.bind(this)}
-                > {data[i].title} </a>
+                >{data[i].title} </a>
             </li>);  //key값은 리액트에서 리액트가 내부적으로 필요해서 요청하는 데이터
             i =  i + 1;
         }

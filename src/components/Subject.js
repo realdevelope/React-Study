@@ -12,7 +12,6 @@ class Subject extends Component { //서브젝트라는 클래스를 만들겠다
              this.props.onChangePage();
         }.bind(this)}>{this.props.title}</a></h1> {/*리팩토링*/}
         {this.props.sub}
-
     </header>
     );
   }
