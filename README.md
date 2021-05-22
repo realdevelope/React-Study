@@ -2,17 +2,18 @@
 - 생활코딩 - 모던 react Study
 - 1월 프론트앤드 기초부터 바로잡기 프로젝트
 
+
 ## 🏠학습환경
 - vsc - create react app
 - npm start (localhost:3000)
 
 
 ## 📚학습내용
-
 - react - 기초부터 차근차근🐢
 
 |`-Basic` | | 
 |:---|:---|               
+<<<<<<< HEAD
 |1. 수업소개|21. bind 함수|
 |2. 공부전략|22. setState 함수|
 |3. 개발환경의 종류|23. component 이벤트 만들기1|
@@ -33,6 +34,7 @@
 |18. KEY|38. update 구현 : state 변경 |
 |19. 이벤트 state props 그리고 render함수|39. delete 구현 
 |20. 이벤트 설치|40. 수업을 마치며✔36. update 구현 
+<br>
 
 ## 💻학습 완성본(미리보기)
 간단한 CRUD 웹 애플리케이션<br>
