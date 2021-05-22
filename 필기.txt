@@ -136,8 +136,78 @@
      -state의 값이 바뀌면 항상 setState로 바꿔줘야한 다는것! 중요!!!!
      -가장 먼저 실행되는 constructor의 경우는 직접 바꿔줘도 됨
 
-23.컴포넌트 이벤트 만들기 1/3
+23. 컴포넌트 이벤트 만들기 1/3
     -
 
-24.컴포넌트 이벤트 만들기  2/3
-    -
+24. 컴포넌트 이벤트 만들기  2/3
+     -
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+<01월 02일> -생활코딩 React 입문
+
+25. 컴포넌트 이벤트 만들기 3/3
+    -selected_content_id: 2 	:  기본적으로 2번 컨택트가 선택되게
+    
+    ----------->너무 어려움
+                   컨텐츠가 다이나믹하게 변하는거 구현 (onClick 이벤트로) - reload 되지 않고
+
+26. 베이스캠프 (정리)
+     - props : read-only - 수정할 수 없음
+     - state : setState로 바꿀 수 있음
+     - 상위컴포넌트가 하위컴포넌트로 값을 전달할떄는 props를 통해 전달
+     - 하위컴포넌트가 상위컴포넌트의 값을 바꾸고 싶을땐 이벤트를 통해 바꿈
+     - redux : 저장소가 한곳에 저장되어있어서 저장소에있는 값이 바뀌면
+                 관련된 컴포넌트의 값이 다 바뀌는 그런 것 (이정도만 알고 넘어가기)
+
+27. create 구현 : 소개
+    -C : create / R : read / U : update / D : delete 
+
+28. create 구현 : mode 변경기능
+    -  create, read, update는 특정페이지로 이동해서 오퍼레이션이 실행    
+    - delete는 버튼을 클릭할떄 삭제가 일어나게 하기위해서 링크를 사용하지 않고 버튼같은 오퍼레이션을 사용
+        -> 링크를 이용할시 문제발생
+    - control.js 컴포넌트 파일로 분리
+    - onChangeMode 라는 이벤트 사용
+
+29. create 구현 : mode 전환기능
+    - create를 클릭했을때 읽기에 사용되는 컴포넌트를 create 컴포넌트로 변경(read -> create )
+    - Definition.js -> ReadDefinition.js로 변경 , CreatDefinition.js 생성
+     
+30. create 구현 : form
+    -CreateContent의 form 작성하고 submit 버튼 제출하고 리로드(페이지전환) 되지 않게 설정
+
+31. create 구현 : onSubmit 이벤트
+    - submit 버튼이 클릭됬을때 createContent의 이벤트로 설치된 함수를 실행
+    - title, desc 값을 추출 하여 출력
+
+32. create 구현 : contents 변경
+    ----------->concat 너무 어려움
+
+33, 34. pass
+
+36. update 구현
+     - update기능은 read 기능 + create 기능이 결합되어있다고 볼 수 있다.
+     - App.js 의 render() 부분에 create와 마찬가지로 작성
+     - Updatefinition.js 생성후 create와 마찬가지로 작성
+     - render()함수부분  -> 새로운 함수로 쪼개서 분리 (getContent())
+     - 2번에 해당하는 컨텐트를  update컨텐트에 주입
+     - getReadContent(); 로 깔끔하게 리팩토링     
+
+
+37. update 구현 : form
+     -공식 문서 참고해서 공부!!!  하지않고는 다루기 힘듬
+     -form의 value값으로 컴포넌트 안에서 가변적인데이터 state화 시켜줌
+     -리팩토링
+        >onChange=function(e)를 그때그때사용하는것 번거롭기 떄문에
+ 	  ->inputFormHandler(e)함수를 만들어서 중복을 제거
+         >최신 js기능 [e.target.name] 사용하여 title에 박혀있어 안되는부분 가능하게 함
+         >bind(this) 계속 사용하지 않고 constructor에 this.inputFormHandler = this.inputFormHandler.bind(this);
+           로 바인딩이 된걸로 아예 바꿔버림
+
+38. update 구현 : state 변경
+     -------------->어려움...
+
+39. delete 구현
+     -splice() - 어디서부터 어디까지 지울것인지 결정
+     -끄슷
+
