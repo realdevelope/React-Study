@@ -13,7 +13,6 @@
 
 |`-Basic` | | 
 |:---|:---|               
-<<<<<<< HEAD
 |1. 수업소개|21. bind 함수|
 |2. 공부전략|22. setState 함수|
 |3. 개발환경의 종류|23. component 이벤트 만들기1|
@@ -26,14 +25,14 @@
 |10. React가 없다면|30. create 구현 : form|
 |11. component 만들기1|31. create 구현 : onSubmit 이벤트|
 |12. component 만들기2|32. create 구현 : contents 변경|
-|13. props✔|33. pass |33. pass|
+|13. props|33. pass |33. pass|
 |14. React Developer Tools| 34. pass|
 |15. component 파일로 분리| 35. pass|
 |16. state 소개|36. update 구현 |
-|17. state 사용|37. update 구현 : form |
-|18. KEY|38. update 구현 : state 변경 |
-|19. 이벤트 state props 그리고 render함수|39. delete 구현 
-|20. 이벤트 설치|40. 수업을 마치며✔36. update 구현 
+|17. state 사용|37. update 구현 : form|
+|18. KEY|38. update 구현 : state 변경|
+|19. 이벤트 state props 그리고 render함수|39. delete 구현|
+|20. 이벤트 설치|40. 수업을 마치며|
 <br>
 
 ## 💻학습 완성본(미리보기)
